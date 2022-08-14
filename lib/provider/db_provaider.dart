@@ -35,6 +35,8 @@ class DbProvaider extends ChangeNotifier{
     if(addKey.currentState!.validate()){
       await DbHelper.dbHelper.insertNewNote(notesModel);
       await  selectAllNotes();
+      AppRouter.popraoter();
+
       titleController.text="";
       descriptionController.text="";
 
@@ -56,6 +58,8 @@ class DbProvaider extends ChangeNotifier{
       await DbHelper.dbHelper.updateOneNote(notesModel);
 
       await selectAllNotes();
+      AppRouter.popraoter();
+
       titleController.text="";
       descriptionController.text="";
 

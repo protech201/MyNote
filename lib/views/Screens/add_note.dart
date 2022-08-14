@@ -51,7 +51,6 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                       day: day,
                       mounth: mounth,
                     ));
-                    AppRouter.popraoter();
 
                   },
                   icon: Icon(Icons.done)),

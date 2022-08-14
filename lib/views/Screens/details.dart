@@ -37,7 +37,6 @@ class DetailsScreen extends StatelessWidget {
               IconButton(
                   onPressed: ()  async {
                     await provider.updateNote(notesModel);
-                    AppRouter.popraoter();
                     },
                   icon: Icon(Icons.done)),
             ],
