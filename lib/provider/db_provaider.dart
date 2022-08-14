@@ -37,7 +37,6 @@ class DbProvaider extends ChangeNotifier{
       await  selectAllNotes();
       titleController.text="";
       descriptionController.text="";
-      AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
 
     }
   }
@@ -57,7 +56,6 @@ class DbProvaider extends ChangeNotifier{
       await DbHelper.dbHelper.updateOneNote(notesModel);
 
       await selectAllNotes();
-      AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
       titleController.text="";
       descriptionController.text="";
 

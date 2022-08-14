@@ -28,6 +28,8 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
 
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+
         backgroundColor: Color(0xff3930d8),
         flexibleSpace: Stack(
           children: [
@@ -154,7 +156,7 @@ List<PersistentBottomNavBarItem> _navBarsItems() {
       activeColorPrimary: CupertinoColors.activeOrange,
       inactiveColorPrimary: CupertinoColors.activeGreen,
       onPressed: (x){
-        AppRouter.NavigateWithReplacemtnToWidget(AddNoteScreen());
+        AppRouter.NavigateToWidget(AddNoteScreen());
       }
 
     ),

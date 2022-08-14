@@ -37,7 +37,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
             centerTitle: true,
             backgroundColor: Color(0xff3930D8),
             leading: IconButton(onPressed: (){
-              AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
+              AppRouter.popraoter();
               provider.titleController.text="";
               provider.descriptionController.text="";
             }, icon: Icon(Icons.arrow_back_outlined)),
@@ -50,13 +50,10 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                         hours: hours,
                       day: day,
                       mounth: mounth,
-
                     ));
+                    AppRouter.popraoter();
 
-
-
-
-                    },
+                  },
                   icon: Icon(Icons.done)),
             ],
             elevation: 5,

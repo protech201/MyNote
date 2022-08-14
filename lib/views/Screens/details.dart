@@ -29,7 +29,7 @@ class DetailsScreen extends StatelessWidget {
             centerTitle: true,
             backgroundColor: Color(0xff3930D8),
             leading: IconButton(onPressed: (){
-              AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
+              AppRouter.popraoter();
               provider.titleController.text="";
               provider.descriptionController.text="";
             }, icon: Icon(Icons.arrow_back_outlined)),
@@ -37,6 +37,7 @@ class DetailsScreen extends StatelessWidget {
               IconButton(
                   onPressed: ()  async {
                     await provider.updateNote(notesModel);
+                    AppRouter.popraoter();
                     },
                   icon: Icon(Icons.done)),
             ],
@@ -88,7 +89,7 @@ class DetailsScreen extends StatelessWidget {
                       const Spacer(),
                       IconButton(onPressed: (){
                         provider.deletNote(notesModel);
-                        AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
+                        AppRouter.popraoter();
 
                       },
                           icon: Icon(Icons.delete))

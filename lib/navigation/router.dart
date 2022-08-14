@@ -18,5 +18,8 @@ class AppRouter{
       return widget;
     }));
   }
+  static popraoter() {
+    Navigator.of(navKey.currentContext!).pop();
+  }
 
 }
