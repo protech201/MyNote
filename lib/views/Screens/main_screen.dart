@@ -28,13 +28,10 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
 
       appBar: AppBar(
+        backgroundColor: Color(0xff3930d8),
         flexibleSpace: Stack(
           children: [
-            Container(
-              height: 106.h,
-              width: 375.w,
-              color: const Color(0xff3930d8),
-            ),
+
             Row(
               mainAxisAlignment: (context.locale.toString()=='en')
                   ?MainAxisAlignment.start
