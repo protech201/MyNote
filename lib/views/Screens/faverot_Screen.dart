@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mynote/provider/db_provaider.dart';
-import 'package:mynote/views/Screens/main_screen.dart';
 import 'package:provider/provider.dart';
 
-import '../../navigation/router.dart';
 import '../widgets/notes_widget.dart';
 
 
@@ -29,82 +27,80 @@ class _FaverotScreenState extends State<FaverotScreen> {
               child:SingleChildScrollView(
                 child: Column(
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          height: 90.h,
-                          width: 375.w,
-                          color: const Color(0xff3930d8),
-                        ),
-                        Row(
-                          mainAxisAlignment: (context.locale.toString()=='en')
-                              ?MainAxisAlignment.start
-                              :MainAxisAlignment.end,
-                          children: [
-                            Image.asset("assets/image/Scroll Group 3.png",height: 90.h,),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: (context.locale.toString()=='en')
-                              ?MainAxisAlignment.end
-                              :MainAxisAlignment.start,
-                          children: [
-                            Image.asset("assets/image/Scroll Group 2.png")
-                          ],
-                        ),
-                        Padding(
-                          padding:(context.locale.toString()=='en')
-                              ? const EdgeInsets.only(left: 18, top: 30, )
-                              :const EdgeInsets.only(right: 18, top: 30, ),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: 239.w,
-                                height: 40.h,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    filled: true,
-                                    fillColor: Colors.grey.shade200,
-                                    contentPadding: EdgeInsets.all(1.h),
-                                    hintText:"Search Your Notes".tr(),
-
-                                    prefixIcon: Icon(Icons.search,color: Colors.black54,),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(5)),
-                                      borderSide: BorderSide(color: Colors.black12),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(5)),
-                                      borderSide: BorderSide(color: Colors.black12),
-                                    ),
-
-
-                                  ),
-
-                                ),
-                              ),
-                              SizedBox(width: 66.w,),
-                              InkWell(
-                                onTap: () async {
-                                      if(await context.locale.toString()=="ar"){
-                                      await context.setLocale(Locale('en'));
-                                      }else{
-                                      await context.setLocale(Locale('ar'));
-                                      }
-                                      AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
-
-                        },
-                                child: Icon(Icons.language),
-                              )
-
-
-                            ],
-                          ),
-                        )
-
-
-                      ],
-                    ),
+                    // Stack(
+                    //   children: [
+                    //     Container(
+                    //       height: 90.h,
+                    //       width: 375.w,
+                    //       color: const Color(0xff3930d8),
+                    //     ),
+                    //     Row(
+                    //       mainAxisAlignment: (context.locale.toString()=='en')
+                    //           ?MainAxisAlignment.start
+                    //           :MainAxisAlignment.end,
+                    //       children: [
+                    //         Image.asset("assets/image/Scroll Group 3.png",height: 90.h,),
+                    //       ],
+                    //     ),
+                    //     Row(
+                    //       mainAxisAlignment: (context.locale.toString()=='en')
+                    //           ?MainAxisAlignment.end
+                    //           :MainAxisAlignment.start,
+                    //       children: [
+                    //         Image.asset("assets/image/Scroll Group 2.png")
+                    //       ],
+                    //     ),
+                    //     Padding(
+                    //       padding:(context.locale.toString()=='en')
+                    //           ? const EdgeInsets.only(left: 18, top: 30, )
+                    //           :const EdgeInsets.only(right: 18, top: 30, ),
+                    //       child: Row(
+                    //         children: [
+                    //           SizedBox(
+                    //             width: 239.w,
+                    //             height: 40.h,
+                    //             child: TextField(
+                    //               decoration: InputDecoration(
+                    //                 filled: true,
+                    //                 fillColor: Colors.grey.shade200,
+                    //                 contentPadding: EdgeInsets.all(1.h),
+                    //                 hintText:"Search Your Notes".tr(),
+                    //
+                    //                 prefixIcon: Icon(Icons.search,color: Colors.black54,),
+                    //                 enabledBorder: OutlineInputBorder(
+                    //                   borderRadius: BorderRadius.all(Radius.circular(5)),
+                    //                   borderSide: BorderSide(color: Colors.black12),
+                    //                 ),
+                    //                 focusedBorder: OutlineInputBorder(
+                    //                   borderRadius: BorderRadius.all(Radius.circular(5)),
+                    //                   borderSide: BorderSide(color: Colors.black12),
+                    //                 ),
+                    //
+                    //
+                    //               ),
+                    //
+                    //             ),
+                    //           ),
+                    //           SizedBox(width: 66.w,),
+                    //           InkWell(
+                    //             onTap: () async {
+                    //                   if(await context.locale.toString()=="ar"){
+                    //                   await context.setLocale(Locale('en'));
+                    //                   }else{
+                    //                   await context.setLocale(Locale('ar'));
+                    //                   }
+                    //                   // AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
+                    //
+                    //     },
+                    //             child: Icon(Icons.language),
+                    //           )
+                    //
+                    //
+                    //         ],
+                    //       ),
+                    //     )
+                    //   ],
+                    // ),
                     Padding(
                       padding: (context.locale.toString()=='en')
                           ?const EdgeInsets.only(left: 18,top: 11)

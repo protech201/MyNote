@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:jiffy/jiffy.dart';
@@ -75,6 +74,8 @@ class DbProvaider extends ChangeNotifier{
       return"هذ الحقل مطلوب";
     }
   }
+
+
 
 
 
