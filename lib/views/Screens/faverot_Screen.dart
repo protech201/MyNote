@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -35,15 +36,26 @@ class _FaverotScreenState extends State<FaverotScreen> {
                           width: 375.w,
                           color: const Color(0xff3930d8),
                         ),
-                        Image.asset("assets/image/Scroll Group 3.png",height: 90.h,),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisAlignment: (context.locale.toString()=='en')
+                              ?MainAxisAlignment.start
+                              :MainAxisAlignment.end,
+                          children: [
+                            Image.asset("assets/image/Scroll Group 3.png",height: 90.h,),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: (context.locale.toString()=='en')
+                              ?MainAxisAlignment.end
+                              :MainAxisAlignment.start,
                           children: [
                             Image.asset("assets/image/Scroll Group 2.png")
                           ],
                         ),
-                        Container(
-                          margin: EdgeInsets.only(left: 18,top: 30),
+                        Padding(
+                          padding:(context.locale.toString()=='en')
+                              ? const EdgeInsets.only(left: 18, top: 30, )
+                              :const EdgeInsets.only(right: 18, top: 30, ),
                           child: Row(
                             children: [
                               SizedBox(
@@ -94,7 +106,9 @@ class _FaverotScreenState extends State<FaverotScreen> {
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 18,top: 11),
+                      padding: (context.locale.toString()=='en')
+                          ?const EdgeInsets.only(left: 18,top: 11)
+                          :EdgeInsets.only(right: 18,top: 11),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
