@@ -25,36 +25,35 @@ class _MainScreenState extends State<MainScreen> {
   @override
   PersistentTabController _controller = PersistentTabController(initialIndex: 0);
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
 
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
 
-        backgroundColor: Color(0xff3930d8),
-        flexibleSpace: Stack(
-          children: [
+          backgroundColor: Color(0xff3d43ac),
+          flexibleSpace: Stack(
+            alignment: Alignment.center,
+            children: [
 
-            Row(
-              mainAxisAlignment: (context.locale.toString()=='en')
-                  ?MainAxisAlignment.start
-                  :MainAxisAlignment.end,
-              children: [
-                Image.asset("assets/image/Scroll Group 1.png",height: 106.h,),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: (context.locale.toString()=='en')
-                  ?MainAxisAlignment.end
-                  :MainAxisAlignment.start,
-              children: [
-                Image.asset("assets/image/Scroll Group 2.png",height: 75.h,)
-              ],
-            ),
-            Padding(
-              padding:(context.locale.toString()=='en')
-                  ? const EdgeInsets.only(left: 18, top: 30, )
-                  :const EdgeInsets.only(right: 18, top: 30, ),
-              child: Row(
+              Row(
+                mainAxisAlignment: (context.locale.toString()=='en')
+                    ?MainAxisAlignment.start
+                    :MainAxisAlignment.end,
+                children: [
+                  Image.asset("assets/image/Scroll Group 1.png",height: 106.h,),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: (context.locale.toString()=='en')
+                    ?MainAxisAlignment.end
+                    :MainAxisAlignment.start,
+                children: [
+                  Image.asset("assets/image/Scroll Group 2.png",height: 75.h,)
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
                     width: 239.w,
@@ -81,7 +80,6 @@ class _MainScreenState extends State<MainScreen> {
 
                     ),
                   ),
-                  SizedBox(width: 66.w,),
                   InkWell(
                     onTap: () async {
                       if(await context.locale.toString()=="ar"){
@@ -92,50 +90,50 @@ class _MainScreenState extends State<MainScreen> {
                       // AppRouter.NavigateWithReplacemtnToWidget(MainScreen());
 
                     },
-                    child: Icon(Icons.language),
+                    child: Icon(Icons.language,color: Colors.white,),
                   )
 
 
                 ],
-              ),
-            )
+              )
+            ],
+          ),
+          toolbarHeight: 75.h,
+        ),
+
+
+        body: PersistentTabView(
+          context,
+          controller: _controller,
+          screens: [
+            HomeScreen(),
+            AddNoteScreen(),
+            FaverotScreen()
           ],
+          items: _navBarsItems(),
+          confineInSafeArea: true,
+          backgroundColor: Colors.white, // Default is Colors.white.
+          handleAndroidBackButtonPress: true, // Default is true.
+          resizeToAvoidBottomInset: true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
+          stateManagement: true, // Default is true.
+          hideNavigationBarWhenKeyboardShows: true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+          decoration: NavBarDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            colorBehindNavBar: Colors.white,
+          ),
+          popAllScreensOnTapOfSelectedTab: true,
+          popActionScreens: PopActionScreensType.all,
+          itemAnimationProperties: ItemAnimationProperties( // Navigation Bar's items animation properties.
+            duration: Duration(milliseconds: 200),
+            curve: Curves.ease,
+          ),
+          screenTransitionAnimation: ScreenTransitionAnimation( // Screen transition animation on change of selected tab.
+            animateTabTransition: true,
+            curve: Curves.ease,
+            duration: Duration(milliseconds: 200),
+          ),
+          navBarStyle: NavBarStyle.style15, // Choose the nav bar style with this property.
         ),
-        toolbarHeight: 75.h,
-      ),
-
-
-      body: PersistentTabView(
-        context,
-        controller: _controller,
-        screens: [
-          HomeScreen(),
-          AddNoteScreen(),
-          FaverotScreen()
-        ],
-        items: _navBarsItems(),
-        confineInSafeArea: true,
-        backgroundColor: Colors.white, // Default is Colors.white.
-        handleAndroidBackButtonPress: true, // Default is true.
-        resizeToAvoidBottomInset: true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-        stateManagement: true, // Default is true.
-        hideNavigationBarWhenKeyboardShows: true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
-        decoration: NavBarDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          colorBehindNavBar: Colors.white,
-        ),
-        popAllScreensOnTapOfSelectedTab: true,
-        popActionScreens: PopActionScreensType.all,
-        itemAnimationProperties: ItemAnimationProperties( // Navigation Bar's items animation properties.
-          duration: Duration(milliseconds: 200),
-          curve: Curves.ease,
-        ),
-        screenTransitionAnimation: ScreenTransitionAnimation( // Screen transition animation on change of selected tab.
-          animateTabTransition: true,
-          curve: Curves.ease,
-          duration: Duration(milliseconds: 200),
-        ),
-        navBarStyle: NavBarStyle.style15, // Choose the nav bar style with this property.
       ),
     );
   }

@@ -27,7 +27,7 @@ class DetailsScreen extends StatelessWidget {
           appBar: AppBar(
             title: Text('Note details'.tr()),
             centerTitle: true,
-            backgroundColor: Color(0xff3930D8),
+            backgroundColor: Color(0xff3d43ac),
             leading: IconButton(onPressed: (){
               AppRouter.popraoter();
               provider.titleController.text="";
@@ -40,7 +40,7 @@ class DetailsScreen extends StatelessWidget {
                     },
                   icon: Icon(Icons.done)),
             ],
-            elevation: 5,
+            elevation: 2,
           ),
           body: Padding(
             padding: const EdgeInsets.only(left: 32,right: 32),
@@ -55,7 +55,7 @@ class DetailsScreen extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Open Sans',
                             fontSize: 15.sp,
-                            color: const Color(0xffcecece),
+                            color: Colors.grey,
                           ),
                           children: [
                             TextSpan(
@@ -91,7 +91,7 @@ class DetailsScreen extends StatelessWidget {
                         AppRouter.popraoter();
 
                       },
-                          icon: Icon(Icons.delete))
+                          icon: Icon(Icons.delete,color: Colors.red,))
                     ],
                   ),
                   TextFormField(
@@ -102,9 +102,8 @@ class DetailsScreen extends StatelessWidget {
                       letterSpacing: 1,
                       fontFamily: 'Open Sans',
                       fontSize: 25.sp,
-                      color:  Colors.black,
+                      color:  Color(0xff3d43ac),
                       fontWeight: FontWeight.bold,
-                      height: 1.411764705882353,
                     ),
                       decoration: InputDecoration.collapsed(
                         hintText: 'Title'.tr(),

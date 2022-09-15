@@ -17,25 +17,25 @@ class _SplachScreenState extends State<SplachScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 200.h,),
-              Image.asset("assets/image/Group 271.png",height: 104.06.h,width: 148.w,),
-              SizedBox(height: 145.h,),
+              SizedBox(height: 80.h,),
+              Image.asset("assets/image/pngwing.com.png",height: 200.h),
               Text(
-                'Made it Simple'.tr(),
+                'My Notes'.tr(),
                 style: TextStyle(
                   fontFamily: 'Open Sans',
-                  fontSize: 22.sp,
-                  color: const Color(0xff554e8f),
-                  fontWeight: FontWeight.w600,
+                  fontSize: 30.sp,
+                  color: const Color(0xff3d43ac),
                 ),
                 textAlign: TextAlign.center,
-                softWrap: false,
               ),
-              SizedBox(height: 10.h,),
+              Spacer(),
+
+
               SizedBox(
                 width: 240.w,
                 child: Text(
@@ -63,14 +63,14 @@ class _SplachScreenState extends State<SplachScreen> {
                   height: 56.29.h,
                   width: 258.w,
                   decoration: BoxDecoration(
-                    color: const Color(0xff3930d8),
+                    color: const Color(0xff3d43ac),
                     borderRadius: BorderRadius.circular(10.0),
                     boxShadow: [
-                      BoxShadow(
-                        color: const Color(0x8766c81c),
-                        offset: Offset(0, 5),
-                        blurRadius: 30,
-                      ),
+                      // BoxShadow(
+                      //   // color: const Color(0x8766c81c),
+                      //   offset: Offset(0, 5),
+                      //   blurRadius: 30,
+                      // ),
                     ],
                   ),
                   child: Text(
@@ -87,7 +87,8 @@ class _SplachScreenState extends State<SplachScreen> {
                     softWrap: false,
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: 50.h,),
 
             ],
           ),

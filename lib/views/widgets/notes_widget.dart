@@ -90,7 +90,7 @@ class _NotesWidgetState extends State<NotesWidget> {
                 style: TextStyle(
                   fontFamily: 'Open Sans',
                   fontSize: 14.sp,
-                  color: const Color(0xff3930d8),
+                  color: const Color(0xff3d43ac),
                   fontWeight: FontWeight.w700,
                 ),
                 softWrap: false,
